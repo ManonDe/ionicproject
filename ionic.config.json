@@ -2,5 +2,7 @@
   "name": "testAppside",
   "app_id": "3e3f19b1",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }
