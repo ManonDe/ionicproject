@@ -11,11 +11,11 @@
   <h3>Ionic Menu Starter {{app.name}} {{app.version}}</h3>
   <ion-item>
     <ion-label color="primary" floating>app.name</ion-label>
-    <ion-input[(ngModel)]="app.name" type="text"></ion-input>
+    <ion-input>[(ngModel)]="app.name" type="text"</ion-input>
   </ion-item>
   <ion-item>
     <ion-label color="primary" floating>app.version</ion-label>
-    <ion-input[(ngModel)]="app.version" type="text"></ion-input>
+    <ion-input>[(ngModel)]="app.version" type="text"</ion-input>
   </ion-item>
   <button ion-button (click)="runCamera()">Appareil photo</button>
 
