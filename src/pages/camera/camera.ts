@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { Camera } from '@ionic-native/camera';
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
 
 @Component({
@@ -29,7 +28,7 @@ export class CameraPage {
       // imageData is either a base64 encoded string or a file URI
       // If it's base64:
       this.img = 'data:image/jpeg;base64,' + imageData;
-      this.base64ToGallery.base64ToGallery(base64Data, {prefix: '_img'}).then(
+      this.base64ToGallery.base64ToGallery(imageData, {prefix: '_img'}).then(
         res => console.log('Saved image to gallery ', res),
         err => console.log('Error saving image to gallery ', err)
       );
