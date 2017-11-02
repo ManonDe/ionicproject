@@ -1,4 +1,4 @@
-Projet de Manon Depreux
+## Projet de Manon Depreux (M2)
 
 This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
 
