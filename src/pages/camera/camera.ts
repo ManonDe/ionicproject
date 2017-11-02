@@ -3,7 +3,10 @@ import { NavController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
 import { LocalNotifications } from '@ionic-native/local-notifications';
-import { MediaCapture, MediaFile, CaptureError, CaptureImageOptions } from '@ionic-native/media-capture';
+import {
+  MediaCapture, MediaFile, CaptureError, CaptureImageOptions,
+  CaptureVideoOptions
+} from '@ionic-native/media-capture';
 
 @Component({
   selector: 'page-camera',
@@ -48,11 +51,10 @@ export class CameraPage {
   }
 
   //Option vidéo
-  optionsVideo: CaptureImageOptions = { limit: 3 };
+  optionsVideo: CaptureVideoOptions = { limit: 1 };
 
   runVideo(){
-
-    this.mediaCapture.captureImage(this.optionsVideo)
+    this.mediaCapture.captureVideo(this.optionsVideo)
       .then(
         (data: MediaFile[]) => this.video = data[0].fullPath,
         (err: CaptureError) => console.error(err)
