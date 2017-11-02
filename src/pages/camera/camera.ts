@@ -13,11 +13,10 @@ export class CameraPage {
 
   app: any = {name: String, version:Number};
   img:String;
+  video:any;
 
   //Constructeur
   constructor(public navCtrl: NavController, private camera: Camera, private base64ToGallery: Base64ToGallery, private localNotifications: LocalNotifications, private mediaCapture: MediaCapture) {
-    this.app.name = "AppName";
-    this.app.version = 3.0;
   }
 
   //Options de la caméra
@@ -25,7 +24,7 @@ export class CameraPage {
     quality: 100,
     destinationType: this.camera.DestinationType.DATA_URL,
     encodingType: this.camera.EncodingType.JPEG,
-    mediaType: this.camera.MediaType.ALLMEDIA
+    mediaType: this.camera.MediaType.PICTURE
   };
 
   //Fonction qui permet d'utiliser l'appareil photo
@@ -43,15 +42,21 @@ export class CameraPage {
         text:'Image enregistrée',   //Message de la notification
         data: { secret: "hello" }
       });
-      let options: CaptureImageOptions = { limit: 3 };
-      this.mediaCapture.captureImage(options)
-        .then(
-          (data: MediaFile[]) => console.log(data),
-          (err: CaptureError) => console.error(err)
-        );
     }, (err) => {
       // Handle error
     });
+  }
+
+  //Option vidéo
+  optionsVideo: CaptureImageOptions = { limit: 3 };
+
+  runVideo(){
+
+    this.mediaCapture.captureImage(this.optionsVideo)
+      .then(
+        (data: MediaFile[]) => this.video = data[0].fullPath,
+        (err: CaptureError) => console.error(err)
+      );
   }
 
 }
