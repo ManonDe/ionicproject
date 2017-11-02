@@ -39,7 +39,7 @@ export class CameraPage {
       );
       this.localNotifications.schedule({  //Permet d'envoyer une notification
         id:1,
-        text:'Single ILocalNotification',
+        text:'Image enregistrée',
         data: { secret: "hello" }
       });
     }, (err) => {
