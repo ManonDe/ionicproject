@@ -11,6 +11,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera } from '@ionic-native/camera';
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
 import { LocalNotifications } from '@ionic-native/local-notifications';
+import { MediaCapture } from '@ionic-native/media-capture';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Camera,
     Base64ToGallery,
-    LocalNotifications
+    LocalNotifications,
+    MediaCapture
   ]
 
 })
