@@ -22,13 +22,5 @@ export class HomePage {
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE
     };
-    runCamera() {
-      this.camera.getPicture(this.options).then((imageData) => {
-        // imageData is either a base64 encoded string or a file URI
-        // If it's base64:
-        this.img = 'data:image/jpeg;base64,' + imageData;
-      }, (err) => {
-        // Handle error
-      });
-    }
+
 }

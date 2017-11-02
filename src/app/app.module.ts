@@ -4,19 +4,18 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { CameraPage } from '../pages/camera/camera';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera } from '@ionic-native/camera';
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
     CameraPage
   ],
   imports: [
@@ -27,7 +26,6 @@ import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
     CameraPage
   ],
   providers: [
@@ -35,7 +33,8 @@ import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Camera,
-    Base64ToGallery
+    Base64ToGallery,
+    LocalNotifications
   ]
 
 })
